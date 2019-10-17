@@ -9,13 +9,15 @@
         let color = '';
 
         color = '#'+Math.round(Math.random() * 0xffffff).toString(16);
+
         divColor.textContent = color;
+        divColor.style.background = color;
         vscode.setState({ color });
 
         vscode.postMessage({
             command: 'alert',
             text: '🥰  color is ' + color
         });
-    }, 3000);
+    }, 1000);
 
 }());

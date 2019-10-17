@@ -131,21 +131,21 @@ class ColorChangePanel {
 		// Vary the webview's content based on where it is located in the editor.
 		switch (this._panel.viewColumn) {
 			case vscode.ViewColumn.Two:
-				this._updateForCat(webview);
+				this._updateForColor(webview);
 				return;
 
 			case vscode.ViewColumn.Three:
-				this._updateForCat(webview);
+				this._updateForColor(webview);
 				return;
 
 			case vscode.ViewColumn.One:
 			default:
-				this._updateForCat(webview);
+				this._updateForColor(webview);
 				return;
 		}
 	}
 
-	private _updateForCat(webview: vscode.Webview) {
+	private _updateForColor(webview: vscode.Webview) {
 		this._panel.title = 'colorChanger';
 		this._panel.webview.html = this._getHtmlForWebview(webview);
 	}
@@ -171,8 +171,8 @@ class ColorChangePanel {
 				<title>Change Color</title>
             </head>
             <body>
-                <div id="divColor" style="width:600px; height:600px; background: white;"></div>
-                <script nonce="${nonce}" src="${scriptUri}"></script>
+				<script nonce="${nonce}" src="${scriptUri}"></script>
+                <div id="divColor"></div>
             </body>
             </html>`;
 	}
