@@ -12,7 +12,7 @@ export function activate({ subscriptions }: vscode.ExtensionContext) {
         let str = getSelectedText(vscode.window.activeTextEditor);
         vscode.window.showInformationMessage(`${n} line(s) selected!`);
         setTimeout(() => {
-            vscode.window.showInformationMessage(str);
+            vscode.window.showInformationMessage(JSON.stringify(str));
         },2000);
 	}));
 
@@ -48,14 +48,17 @@ function getNumberOfSelectedLines(editor: vscode.TextEditor | undefined): number
 	return lines;
 }
 
-function getSelectedText(editor: vscode.TextEditor | undefined): string {
-    let str = '';
+function getSelectedText(editor: vscode.TextEditor | undefined): string[] {
+    let str = new Array();
     if(editor) {
-        str = editor.document.getText(new vscode.Range(
-            editor.selections[0].start.line,
-            editor.selections[0].start.character,
-            editor.selections[0].end.line, 
-            editor.selections[0].end.character));
+        for(let i = 0; i<editor.selections.length; i++) {
+            str.push(editor.document.getText(new vscode.Range(
+                editor.selections[i].start.line,
+                editor.selections[i].start.character,
+                editor.selections[i].end.line, 
+                editor.selections[i].end.character)));
+        }
+
         // console.log(editor.selections);
         // console.log(editor.document.getText(new vscode.Range(
         //     editor.selections[0].start.line,
