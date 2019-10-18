@@ -1,26 +1,19 @@
 {
-	"name": "quickpick",
-	"displayName": "quickPick",
+	"name": "statusbar",
+	"displayName": "statusBar",
 	"description": "",
 	"version": "0.0.1",
+	"publisher": "vscode-extension",
 	"engines": {
-		"vscode": "^1.38.1"
+		"vscode": "^1.32.0"
 	},
 	"categories": [
 		"Other"
 	],
 	"activationEvents": [
-		"onCommand:extension.quickInput"
+		"*"
 	],
 	"main": "./out/extension.js",
-	"contributes": {
-		"commands": [
-			{
-				"command": "extension.quickInput",
-				"title": "Show QuickPick"
-			}
-		]
-	},
 	"scripts": {
 		"vscode:prepublish": "npm run compile",
 		"compile": "tsc -p ./",
@@ -32,10 +25,10 @@
 		"@types/glob": "^7.1.1",
 		"@types/mocha": "^5.2.6",
 		"@types/node": "^10.12.21",
-		"@types/vscode": "^1.39.0",
+		"@types/vscode": "^1.32.0",
 		"glob": "^7.1.4",
 		"mocha": "^6.1.4",
-		"typescript": "^3.3.1",
+		"typescript": "^3.5.1",
 		"tslint": "^5.12.1",
 		"vscode-test": "^1.2.0"
 	}

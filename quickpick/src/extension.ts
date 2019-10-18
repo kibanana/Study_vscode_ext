@@ -6,7 +6,7 @@ import {showQuickPickMine, showInputBoxMine} from './basicInput';
 // this method is called when your extension is activated
 // your extension is activated the very first time the command is executed
 export function activate(context: vscode.ExtensionContext) {
-	context.subscriptions.push(vscode.commands.registerCommand('samples.quickInput', async () => {
+	context.subscriptions.push(vscode.commands.registerCommand('extension.quickInput', async () => {
 		const options: {[key: string]: (context: vscode.ExtensionContext) => Promise<void>} = {
 			showQuickPickMine, showInputBoxMine
 		};

@@ -27,7 +27,7 @@ export async function showInputBoxMine() {
 		placeHolder: 'For example: fedcba. But not: 123',
 		validateInput: text => {
 			window.showInformationMessage(`Validating: ${text}`);
-			return text === '123' ? 'Not 123!' : null;
+			return text === 'vanilla latte' ? 'Not that!' : null;
 		}
 	});
 	window.showInformationMessage(`Got: ${result}`);
