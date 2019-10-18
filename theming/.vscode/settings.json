@@ -1,0 +1,32 @@
+// Place your settings in this file to overwrite default and user settings.
+{
+    "type": "dark",
+    "colors": {
+
+    },
+    "tokenColors": "https://raw.githubusercontent.com/Colorsublime/Colorsublime-Themes/master/themes/zacks.tmTheme",
+    "editor.tokenColorCustomizations": {
+        "comments": "#ffb549"
+    },
+    "workbench.colorCustomizations": {
+        "activityBar.background": "#f9bcdd",
+        "activityBar.foreground": "#dd7777",
+        "activityBar.inactiveForeground": "#ffffff",
+        "badge.background": "#f9bcdd",
+        "badge.foreground": "#2d095c",
+        "breadcrumb.background": "#716e77",
+        "breadcrumb.foreground": "#e79686",
+        "breadcrumbPicker.background": "#725f5a",
+        "button.background": "#e79686",
+        "button.hoverBackground": "#dd7777",
+        "editor.hoverHighlightBackground": "#2d4160",
+    },
+    "files.exclude": {
+        "out": false // set this to true to hide the "out" folder with the compiled JS files
+    },
+    "search.exclude": {
+        "out": true // set this to false to include "out" folder in search results
+    },
+    // Turn off tsc task auto detection since we have the necessary tasks as npm scripts
+    "typescript.tsc.autoDetect": "off"
+}
